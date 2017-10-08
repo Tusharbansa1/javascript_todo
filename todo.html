@@ -30,16 +30,22 @@
 	</ul>		
 	</div>
 	</div>
-
+	
 	<script>
+
+		// color for  the border
+		
+
 		var i=0;
 		function myFunction() {
 			i++;
-			console.log(i);
+			var hue = 'rgb(' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ')';
+		
 			var node = document.createElement("LI");
 			node.setAttribute("id", "ram" + i);
 			node.setAttribute("class", "ram");
 			node.setAttribute("onclick", "myfun(this.id)");
+
 			var text = document.getElementById("input").value
 			var textnode = document.createTextNode(text);
      //text empty or not
@@ -47,9 +53,11 @@
      	node.appendChild(textnode);
      	document.getElementById("myList").appendChild(node);
      }
+     document.getElementById("ram" + i).style.color = hue;
  }
 
 </script>
+
 
 <script>
 
