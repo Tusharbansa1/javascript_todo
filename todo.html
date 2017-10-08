@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<style>
+li{
+color:red;
+}
+#ram1{
+color:blue;
+}
+.ram{
+font-size:25px;
+border : solid;
+margin : 3px;
+border-radius : 5px;	
+padding : 4px;
+}
+</style>
+<body>
+
+<input id="input" type="text" name="name" placeholder="input">
+<input type="submit" onclick="myFunction()">
+
+<ul id="myList">
+ 
+</ul>
+<script>
+	var i=0;
+     function myFunction() {
+     i++;
+     console.log(i);
+   	 var node = document.createElement("LI");
+     node.setAttribute("id", "ram" + i);
+     node.setAttribute("class", "ram");
+     node.setAttribute("onclick", "myfun()");
+     var text = document.getElementById("input").value
+     var textnode = document.createTextNode(text);
+     //text empty or not
+     if(text){
+      node.appendChild(textnode);
+     document.getElementById("myList").appendChild(node);
+     }
+     }
+     
+</script>
+
+<script>
+
+function myfun() {
+var i =0;
+for(i=0;i<4;i++){
+console.log("working");
+    var parent = document.getElementById("myList");
+var child = document.getElementById("ram1");
+parent.removeChild(child);
+}}
+</script>
+
+</body>
+</html>
