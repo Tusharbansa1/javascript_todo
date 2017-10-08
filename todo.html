@@ -7,6 +7,10 @@ color:red;
 #ram1{
 color:blue;
 }
+
+#ram2{
+color:green;
+}
 .ram{
 font-size:25px;
 border : solid;
@@ -31,7 +35,7 @@ padding : 4px;
    	 var node = document.createElement("LI");
      node.setAttribute("id", "ram" + i);
      node.setAttribute("class", "ram");
-     node.setAttribute("onclick", "myfun()");
+     node.setAttribute("onclick", "myfun(this.id)");
      var text = document.getElementById("input").value
      var textnode = document.createTextNode(text);
      //text empty or not
@@ -45,14 +49,12 @@ padding : 4px;
 
 <script>
 
-function myfun() {
-var i =0;
-for(i=0;i<4;i++){
-console.log("working");
-    var parent = document.getElementById("myList");
-var child = document.getElementById("ram1");
+function myfun(id) {
+console.log(id);
+var parent = document.getElementById("myList");
+var child = document.getElementById(id);
 parent.removeChild(child);
-}}
+}
 </script>
 
 </body>
