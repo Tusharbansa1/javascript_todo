@@ -1,0 +1,27 @@
+li{
+color:red;
+}
+
+.ram{
+font-size:25px;
+border : solid;
+margin : 3px;
+border-radius : 5px;	
+padding : 4px;
+}
+
+#input{
+	margin-top: 20px;
+	padding : 9px;
+}
+
+#button{
+	background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 22px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}

@@ -1,60 +1,64 @@
 <!DOCTYPE html>
 <html>
-<style>
-li{
-color:red;
-}
-#ram1{
-color:blue;
-}
+<head>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
-#ram2{
-color:green;
-}
-.ram{
-font-size:25px;
-border : solid;
-margin : 3px;
-border-radius : 5px;	
-padding : 4px;
-}
-</style>
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="style.css">
+</head>
 <body>
 
-<input id="input" type="text" name="name" placeholder="input">
-<input type="submit" onclick="myFunction()">
 
-<ul id="myList">
- 
-</ul>
-<script>
-	var i=0;
-     function myFunction() {
-     i++;
-     console.log(i);
-   	 var node = document.createElement("LI");
-     node.setAttribute("id", "ram" + i);
-     node.setAttribute("class", "ram");
-     node.setAttribute("onclick", "myfun(this.id)");
-     var text = document.getElementById("input").value
-     var textnode = document.createTextNode(text);
+	<div class="row container-fluid">
+		<div class="col-md-6 col-sm-6 col-sm-offset-5 col-xs-offset-5 col-xs-6 col-md-offset-5">
+
+			<input id="input" type="text" name="name" placeholder="input">
+			<input type="submit" id="button" onclick="myFunction()">
+
+		</div>
+	</div>
+	<div class="row">
+	<div class="container-fluid col-md-6  col-md-offset-3">
+	
+	<ul id="myList">
+
+	</ul>		
+	</div>
+	</div>
+
+	<script>
+		var i=0;
+		function myFunction() {
+			i++;
+			console.log(i);
+			var node = document.createElement("LI");
+			node.setAttribute("id", "ram" + i);
+			node.setAttribute("class", "ram");
+			node.setAttribute("onclick", "myfun(this.id)");
+			var text = document.getElementById("input").value
+			var textnode = document.createTextNode(text);
      //text empty or not
      if(text){
-      node.appendChild(textnode);
-     document.getElementById("myList").appendChild(node);
+     	node.appendChild(textnode);
+     	document.getElementById("myList").appendChild(node);
      }
-     }
-     
+ }
+
 </script>
 
 <script>
 
-function myfun(id) {
-console.log(id);
-var parent = document.getElementById("myList");
-var child = document.getElementById(id);
-parent.removeChild(child);
-}
+	function myfun(id) {
+		console.log(id);
+		var parent = document.getElementById("myList");
+		var child = document.getElementById(id);
+		parent.removeChild(child);
+	}
 </script>
 
 </body>
